@@ -51,7 +51,7 @@ export class TodoComponent implements OnInit, DoCheck {
 
   ngOnInit() {
     let todolist = [
-      new todoItem(1, "hello world"),
+      new todoItem(1, "hello world",true),
       new todoItem(2, "hey jude"),
       new todoItem(3, "lalve poria pteae")
     ];

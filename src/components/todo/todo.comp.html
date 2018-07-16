@@ -6,7 +6,17 @@
             (keyup.enter)="addTodo($event)"
           
     >
-   
+    <ion-list no-lines>
+       
+        <ion-item *ngFor="let todo of filterTodos">
+            <button ion-item (click)="buttonClick()">
+                Button Item
+              </button>
+        <ion-label>{{todo.content}}</ion-label>
+    
+        <ion-checkbox [(ngModel)]="todo.completed"></ion-checkbox>
+      </ion-item>
+    </ion-list>
     <!-- <app-items *ngFor= 'let todo of filterTodos' 
     [todo]='todo' 
     (onDel)="handleDel($event)" >
@@ -20,4 +30,11 @@
   
   </app-tabs> -->
   </section>
-<h1>hello world</h1>
+  <!-- <div [ngClass] = "{'todo-item':true ,'completed':todo.completed}">
+    <input type="checkbox"
+           class="toggle"
+           [(ngModel)]="todo.completed"
+    >
+    <label>{{todo.content}}</label>
+    <button class="destroy" (click)="deleteTodoItem(todo.id)" ></button>
+  </div> -->
